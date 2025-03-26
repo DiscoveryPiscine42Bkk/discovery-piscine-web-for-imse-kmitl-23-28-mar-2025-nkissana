@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script>
+        const change = () => {
+          let newC = "#" + Math.floor(Math.random() * 16777215).toString(16);
+          document.body.style.backgroundColor = newC;
+        }
+    </script>
+  </head>
+ 
+  <body>
+    <div>
+      <button onclick="change()">
+        Click
+    </button>
+    </div>
+  </body>
+
+</html>

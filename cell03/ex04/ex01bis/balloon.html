@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    #circle {
+      border-radius: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 200px;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div
+        id="circle"
+        style="width: 200px; height: 200px; background-color: red"
+      ></div>
+    </div>
+  </body>
+  <script>
+    $("#circle").click(() => {
+      const colors = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+      const circle = $("#circle");
+      let w = circle.width() + 10;
+      let h = circle.height() + 10;
+      if (width > 420) {
+        circle.css("width", "200px");
+        circle.css("height", "200px");
+        circle.css("background-color", "red");
+      } else {
+        circle.css("width", w);
+        circle.css("height", h);
+        const color = circle.css("background-color");
+        circle.css(
+          "background-color",
+          colors[(colors.findIndex((e) => e == color) + 1) % 3]
+        );
+      }
+    });
+    $("#circle").mouseleave(() => {
+      const colors = ["rgb(0, 0, 255)", "rgb(0, 255, 0)", "rgb(255, 0, 0)"];
+      const circle = $("#circle");
+
+      let w = circle.width() - 5;
+      let h = circle.height() - 5;
+      if (width < 200) {
+        circle.css("width", "200px");
+        circle.css("height", "200px");
+      } else {
+        circle.css("width", w);
+        circle.css("height", h);
+      }
+      const color = circle.css("background-color");
+      circle.css(
+        "background-color",
+        colors[(colors.findIndex((e) => e == color) + 1) % 3]
+      );
+    });
+  </script>
+  
+</html>
